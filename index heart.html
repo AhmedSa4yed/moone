@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My MOON</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("photo_2025-03-30_07-58-57.jpg");
+      padding: 100;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      position: relative;
+      width: 500px;
+    }
+    .heart {
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      cursor: pointer;
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      transition: transform 1.5s ease-out;
+      z-index: 2;
+    }
+    .heart:before,
+    .heart:after {
+      content: "";
+      width: 50px;
+      height: 50px;
+      background-color: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart:before {
+      top: -25px;
+      left: 0;
+    }
+    .heart:after {
+      left: 25px;
+      top: 0;
+    }
+    .paper {
+      width: 100%;
+      min-height: 300px;
+      background: #fff;
+      padding: 20px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transform-origin: left;
+      transform: perspective(1000px) rotateY(90deg) scaleX(0.7);
+      border-radius: 30px;
+      opacity: 0;
+      position: relative;
+      transition: transform 1.5s ease-out, opacity 1.5s ease-out, border-radius 1.5s ease-out;
+    }
+    .paper::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      width: 50px;
+      height: 50px;
+      background: radial-gradient(circle, #8e44ad 30%, transparent 31%);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    .paper .text {
+      font-size: 20px;
+      color: #333;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .paper .signature {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 18px;
+      color: #666;
+      font-style: italic;
+    }
+    .open-text {
+      position: absolute;
+      top: 10%;
+      right: -150px;
+      background: #ffeb3b;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.3s;
+      font-weight: bold;
+      z-index: 3;
+    }
+    .open-text:hover {
+      background: #fdd835;
+      transform: scale(1.05);
+    }
+    .container.active .paper {
+      transform: perspective(1000px) rotateY(0deg) scaleX(1);
+      border-radius: 15px;
+      opacity: 1;
+    }
+    .container.active .heart {
+      transform: translate(-50%, 200px) rotate(-45deg);
+    }
+    .video-link {
+      display: none; /* إخفاء الرابط في البداية */
+      text-align: center;
+      margin-top: 20px;
+    }
+    .container.active .video-link {
+      display: block; /* إظهار الرابط عند فتح الرسالة */
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="paper" id="paper">
+      <div class="text">
+        🦋أزيك يالى مفيش زيك عامله اى يا عمرى واحشتينى اوووى على فكره حبيت العيد دا اعملك حاجه مميزه تليق بيكى واهوو منها افرحك بما انك بعيده عنى كان نفسى تكونى معايا ويكون اول عيد نشوف بعض من اول اليوم بس ملحقوقه يا حبيبتى وعمرى وسنين ايامى
+        تانى عيد ادخله وانا معايا احلى واجمل حد فى الدنيا معايا بنوته تغنى عن عالم بحاله وغنتنى عن حجات كتير فى حياتى ودلوقتى اقدر اقول ان العيد بقى بنسبالي صوتك وضحكتك وعيونك وانك بخير وان وجودك في حياتي اصلا ده العيد اللي بجدا 🥺
+        كل عيد وانتي معايا يا حبيبتي 😚❤️
+        انتي العيد والعيدية واغلى حاجه فى الدنيا ديا انتي فرحة قلبي وحته منى مش حته زى ماسمعتيها ها ها  👀❤️❤️
+        كل عيد وانا بحبك اوي ومقدرش اعيش من غيرك 😚
+        كل عيد وانتي حياتي كلها
+        كل عيد واحنا مع بعض🫂
+        كل عيد وانتي منورة الدنيا كلها 🥺 ❤️
+        ربنا ما يحرمني منك ويجعلك من نصيبي ويهديهكي ليا يا بنوتى  ويكتبك على اسمى❤️❤️❤️🫂محدش يقدر يعوضني عنك انتي بالدنيا ومافيها والله 🫂ربنا يخليكي ليا يا حبيبتي وتفضلي طول العمر جنبي 🤲🫂♥️
+        كل عيد وأحنا مع بعض أن شاء الله
+        وان شاء الله زى الايام دى كدا نكون مع بعض وعيدنا فى بيتنا وفى حضنى❤️كل عيد وانتي معايا ومنورة حياتي يا كل حياتي🌍♥️ كل عيد وانتي طيبة وبخير عاوز اقولك قدام الناس كلها اني بحبك ❤️وبعشقك و بموت فيكي وهيحصل وهعمله والايام هتثبتلك هخليكى تبقى فخوره انك اخترتى صح وانك معايا ❤️ كل عيد وانتي العيد يانن عيني ونور قلبى ودنيتى يا احلى دنيا بعيشها 🌍 🫂♥️🔐🦋  
+        </div>
+      <div class="signature">
+        With Love: Ahmody
+      </div>
+    </div>
+    <div class="heart" id="heart" onclick="activateAnimation()"></div>
+    <div class="open-text" onclick="activateAnimation()">Click here</div>
+    <a href="https://www.youtube.com/watch?v=wxgs1RvrjyY" target="_blank" class="video-link">    Watch the video here
+  </div>
+  <script>
+    function activateAnimation() {
+      document.getElementById("container").classList.add("active");
+    }
+  </script>
+</body>
+</html>
